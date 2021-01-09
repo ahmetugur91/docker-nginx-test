@@ -43,7 +43,7 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 #COPY . /var/www
 
 # Copy existing application directory permissions
-ADD ./sites/socket-redis /var/www
+COPY ./sites/socket-redis /var/www
 RUN chown -R www-data:www-data /var/www
 RUN chmod -R 777 /var/www
 # Change current user to www
