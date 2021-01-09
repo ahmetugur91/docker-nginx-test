@@ -47,7 +47,7 @@ ADD ./sites/socket-redis /var/www
 RUN chown -R www-data:www-data /var/www
 RUN chmod -R 777 /var/www
 # Change current user to www
-USER www
+#USER www
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
