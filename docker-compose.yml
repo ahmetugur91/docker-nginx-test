@@ -11,15 +11,15 @@ services:
             - ./sites/:/sites/
             - ./nginx-hosts/:/etc/nginx/conf.d/
         links:
-            - socket_redis_php
+            - ahmet
         volumes_from:
-            - socket_redis_php
-    socket_redis_php:
+            - ahmet
+    ahmet:
         build:
             context: ./sites
             dockerfile: ../dockerfiles/socket-redis-php/Dockerfile
-        image: socket_redis_php
-        container_name: socket_redis_php
+        image: ahmet
+        container_name: ahmet
         networks:
             - my_net
         volumes:
