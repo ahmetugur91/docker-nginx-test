@@ -2,6 +2,7 @@ version: "3"
 
 services:
   app:
+    container_name: app
     build:
       context: .
       dockerfile: php.Dockerfile
@@ -18,7 +19,8 @@ services:
       - app-network
 
   webserver:
-    image: nginx:alpine
+    image: nginx
+    container_name: webserver
     restart: unless-stopped
     tty: true
     ports:
@@ -30,6 +32,7 @@ services:
       - app-network
 
   node:
+    container_name: node
     image: "node:${NODE_VERSION}"
     user: "node"
     working_dir: /home/node/app
@@ -39,6 +42,7 @@ services:
       - app-network
 
   db:
+    container_name: db
     image: mysql:5.7.22
     ports:
       - "3306:3306"
@@ -56,6 +60,7 @@ services:
       - app-network
 
   phpmyadmin:
+    container_name: phpmyadmin
     image: phpmyadmin/phpmyadmin
     ports:
       - "${PHPMYADMIN_PORT}:80"
