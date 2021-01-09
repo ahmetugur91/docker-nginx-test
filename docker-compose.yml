@@ -22,8 +22,6 @@ services:
             - my_net
         volumes:
             - ./sites/:/sites/
-        links:
-            - web
 networks:
   my_net:
     driver: bridge
