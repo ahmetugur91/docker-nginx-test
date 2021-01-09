@@ -12,9 +12,12 @@ services:
             - ./nginx-hosts/:/etc/nginx/conf.d/
         links:
             - php
-    php:
-        image: php:7-fpm # mysql eklenmesi gerekli https://www.digitalocean.com/community/tutorials/how-to-set-up-laravel-nginx-and-mysql-with-docker-compose
-        container_name: php
+    socket-redis-php:
+        build:
+            context: ./sites
+            dockerfile: ../dockerfiles/socket-redis-php/Dockerfile
+        image: socket-redis-php
+        container_name: socket-redis-php
         networks:
             - my_net
         volumes:
