@@ -6,8 +6,8 @@ RUN docker-php-ext-install pdo
 RUN pecl install mcrypt
 RUN docker-php-ext-enable mcrypt
 
-RUN groupadd -g 1000 www
-RUN useradd -u 1000 -ms /bin/bash -g www www
+RUN groupadd -g 0 www
+RUN useradd -u 0 -ms /bin/bash -g www www
 
 WORKDIR /var/www
 COPY --chown=www:www ./site1/socket-redis /var/www
