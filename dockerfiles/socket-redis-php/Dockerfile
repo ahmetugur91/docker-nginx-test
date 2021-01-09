@@ -10,7 +10,7 @@ RUN docker-php-ext-enable mcrypt
 #RUN useradd -u 0 -ms /bin/bash -g www www
 
 WORKDIR /var/www
-COPY --chown=www:www ./site1/socket-redis /var/www
+COPY ./site1/socket-redis /var/www
 USER www
 
 EXPOSE 9000
