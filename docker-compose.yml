@@ -13,7 +13,7 @@ services:
         links:
             - socket_redis_php
         volumes_from:
-            -   socket_redis_php
+            - socket_redis_php
     socket_redis_php:
         build:
             context: ./sites
