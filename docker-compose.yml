@@ -12,7 +12,7 @@ services:
             - ./nginx-hosts/:/etc/nginx/conf.d/
         links:
             - socket_redis_php
-        depends_on:
+        volumes_from:
             -   socket_redis_php
     socket_redis_php:
         build:
