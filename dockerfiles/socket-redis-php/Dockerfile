@@ -10,7 +10,7 @@ RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
 
 WORKDIR /var/www
-COPY --chown=www:www ./socket-redis /var/www
+COPY --chown=www:www ./site1/socket-redis /var/www
 USER www
 
 EXPOSE 9000
