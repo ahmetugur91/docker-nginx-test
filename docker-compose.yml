@@ -12,8 +12,6 @@ services:
             - ./nginx-hosts/:/etc/nginx/conf.d/
         links:
             - ahmet
-        volumes_from:
-            - ahmet
     ahmet:
         build:
             context: ./sites
@@ -24,6 +22,8 @@ services:
             - my_net
         volumes:
             - ./sites/:/sites/
+        links:
+            - web
 networks:
   my_net:
     driver: bridge
