@@ -11,7 +11,7 @@ RUN docker-php-ext-enable mcrypt
 
 WORKDIR /var/www
 COPY ./site1/socket-redis /var/www
-USER www
+#USER www
 
 EXPOSE 9000
 CMD ["php-fpm"]
